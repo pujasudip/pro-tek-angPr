@@ -8,18 +8,19 @@
     </div>
   </div>
 </div>
-
-<div class={{showHideImageModal}} (click)="outsideInnerModal($event)">
-  <div class="imageModalContent">
-    <i class="material-icons closeIconModal" (click)="hideModal()">close</i>
-    <div class="imageWindow">
-      <i class="material-icons arrowLeft" (click)="imageSlide('left')">keyboard_arrow_left</i>
-      <img src={{currentItem.images[imageIndex].href}}/>
-      <i class="material-icons arrowRight" (click)="imageSlide('right')">keyboard_arrow_right</i>
-    </div>
-    <div class="imageVault">
-      <div *ngFor="let image of currentImages; let i = index;" class="imageItem">
-        <img src={{image.href}} [class.imageActive]="i == imageIndex" (click)="changeIndex(i)"/>
+<div *ngIf="currentItem.images !== undefined">
+  <div class={{showHideImageModal}} (click)="outsideInnerModal($event)">
+    <div class="imageModalContent">
+      <i class="material-icons closeIconModal" (click)="hideModal()">close</i>
+      <div class="imageWindow">
+        <i class="material-icons arrowLeft" (click)="imageSlide('left')">keyboard_arrow_left</i>
+        <img src={{currentItem.images[imageIndex].href}}/>
+        <i class="material-icons arrowRight" (click)="imageSlide('right')">keyboard_arrow_right</i>
+      </div>
+      <div class="imageVault">
+        <div *ngFor="let image of currentImages; let i = index;" class="imageItem">
+          <img src={{image.href}} [class.imageActive]="i == imageIndex" (click)="changeIndex(i)"/>
+        </div>
       </div>
     </div>
   </div>

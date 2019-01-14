@@ -10,8 +10,8 @@ export class HomePageComponent implements OnInit {
 
   products;
   showHideImageModal = 'hideImageModal';
-  currentItem;
-  currentImages;
+  currentItem = [];
+  currentImages = [];
   imageIndex = 0;
 
   constructor(private mockData: MockDataServiceService) { }
@@ -20,7 +20,6 @@ export class HomePageComponent implements OnInit {
     this.mockData.getData().subscribe(
       (data) => {
         this.products = data.groups;
-        console.log('data:', data);
       }
     );
   }
@@ -29,7 +28,6 @@ export class HomePageComponent implements OnInit {
     this.showHideImageModal = 'imageModal';
     this.currentItem = item;
     this.currentImages = item.images;
-    console.log('item:', this.currentImages);
   }
 
   hideModal () {
