@@ -1,0 +1,94 @@
+@import "../../shared_styles/global_styles.scss";
+
+.hideImageModal {
+  display: none;
+}
+
+.imageModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  min-width: 600px;
+}
+
+.imageModalContent {
+  @include hor-ver-center;
+  background-color: red;
+  width: 70%;
+  height: 70%;
+  border-radius: 5px;
+}
+
+.closeIconModal {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  z-index: 100;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.imageWindow {
+  position: relative;
+  height: 80%;
+  width: 100%;
+  & > img {
+    height: 90%;
+    @include hor-ver-center;
+  }
+}
+
+.imageVault {
+  position: absolute;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+  background-color: green;
+}
+
+.arrowLeft {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  cursor: pointer;
+  &:hover {
+    font-size: 3.2rem;
+  }
+}
+
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  cursor: pointer;
+  &:hover {
+    font-size: 3.2rem;
+  }
+}
+
+.imageVault {
+  display: flex;
+  justify-content: center;
+}
+
+.imageItem {
+  height: 100%;
+  & > img {
+    height: 100%;
+    padding: 5px;
+    filter: brightness(60%);
+    cursor: pointer;
+  }
+}
+
+.imageActive {
+  box-shadow: 0 0 3px 3px dimgrey;
+  padding: 0 !important;
+  filter: none !important;
+}
