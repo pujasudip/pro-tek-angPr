@@ -57,4 +57,11 @@ export class HomePageComponent implements OnInit {
     this.imageIndex = index;
   }
 
+  outsideInnerModal(e) {
+    const outside = e.target.getAttribute('class');
+    if (outside === 'imageModal') {
+      this.hideModal();
+    }
+  }
+
 }

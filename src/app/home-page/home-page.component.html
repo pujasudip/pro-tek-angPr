@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class={{showHideImageModal}}>
+<div class={{showHideImageModal}} (click)="outsideInnerModal($event)">
   <div class="imageModalContent">
     <i class="material-icons closeIconModal" (click)="hideModal()">close</i>
     <div class="imageWindow">
